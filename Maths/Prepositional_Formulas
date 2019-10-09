@@ -1,0 +1,143 @@
+* 1
+a.
+    S = Sunny
+    I = Ice cream
+    B = Beer
+
+    S => (I V B)
+
+b. 
+    F = Earth flat
+    G = Earth a globe
+    H = Global warming is hoax
+
+    F => !G => H
+
+c. 
+    L = Attended lectures
+    H = Homework done
+    S = Studied for exam
+    P = Passed maths
+
+    (L A H A S ) <=> P
+
+d. 
+    S = You smell essential oils
+    C = You will be cured
+
+    N = Modern medicine doesnt work
+
+    (S => C) <=> N
+
+* 2
+
+a. (P V !Q) <=> (Q => P)
+
+    P   Q     P V !Q    Q => P
+    1   1       1         1
+    1   0       1         1
+    0   1       0         0
+    0   0       1         1
+
+b. (P => (Q => R)) <=> ((P A Q) => R)
+
+    R   Q   P    P => (Q => R)     (P A Q) => R
+    1   1   1         1                 1
+    1   1   0         1                 1
+    1   0   0         1                 1
+    0   0   0         1                 1
+    0   0   1         1                 1
+    0   1   0         1                 1
+    1   0   1         1                 1
+    0   1   1         0                 0
+
+c. ((P => Q) V (P => R)) <=> (P => (Q V R))
+
+    R   Q   P    (P => Q) V (P => R)     P => (Q V R)
+    1   1   1             1                   1             
+    1   1   0             1                   1
+    1   0   0             1                   1
+    0   0   0             1                   1
+    0   0   1             0                   0
+    0   1   0             1                   1
+    1   0   1             1                   1
+    0   1   1             1                   1
+
+d. (!(P A !Q) V (R => 0)) <=> ((P A R) => Q)
+
+    R   Q   P    !(P A !Q) V (R => 0)     (P A R) => Q
+    1   1   1              1                    1    
+    1   1   0              1                    1
+    1   0   0              1                    1
+    0   0   0              1                    1
+    0   0   1              1                    1
+    0   1   0              1                    1
+    1   0   1              0                    0
+    0   1   1              1                    1
+
+* 3
+
+a. (P A (Q V R)) and ((P A Q) V P)  = 2nd follows from 1st
+    
+    R   Q   P    P A (Q V R)    (P A Q) V P
+    1   1   1         1              1    
+    1   1   0         0              0          
+    1   0   0         0              0          
+    0   0   0         0              0          
+    0   0   1         0              1          
+    0   1   0         0              0          
+    1   0   1         0              1          
+    0   1   1         1              1          
+
+b. (P V (Q A R)) and ((P V Q) A (P V R)) = 1st follows from 2nd
+
+    R   Q   P    P V (Q A R)     (P V Q) A (P V R)
+    1   1   1         1                  1                         
+    1   1   0         1                  1      
+    1   0   0         0                  0       
+    0   0   0         0                  0       
+    0   0   1         1                  0       
+    0   1   0         0                  0       
+    1   0   1         1                  1      
+    0   1   1         1                  1       
+
+c. (P => (Q => R)) and ((P => Q) => R) = 1st follows from 2nd
+    
+    R   Q   P    P => (Q => R)     (P => Q) => R
+    1   1   1         1                  1                         
+    1   1   0         1                  1       
+    1   0   0         1                  1       
+    0   0   0         1                  0       
+    0   0   1         1                  1       
+    0   1   0         1                  0       
+    1   0   1         1                  1       
+    0   1   1         0                  0       
+
+d. (0 => (P A Q)) and (P V Q) = 1st follows from 2nd
+
+    R   Q   P    0 => (P A Q)     P V Q
+    1   1   1          1            1             
+    1   1   0          1            1            
+    1   0   0          1            0       
+    0   0   0          1            0            
+    0   0   1          1            1            
+    0   1   0          1            1            
+    1   0   1          1            1            
+    0   1   1          1            1           
+
+
+* 5
+
+B = Bob says truth
+A = Alice says truth
+C = Carol says truth
+
+    B   A   C       !B => !C     A A C     !A A !B
+    1   1   1           1          1          0                    
+    1   1   0           1          0          0  
+    1   0   0           1          0          0
+    0   0   0           1          0          1         
+    0   0   1           0          0          1
+    0   1   0           1          0          0
+    1   0   1           0          0          0
+    0   1   1           0          1          0
